@@ -10,4 +10,8 @@ class Student extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function absention()
+    {
+        return $this->hasMany(absention::class);
+    }
 }
