@@ -1,4 +1,4 @@
-<div class="w-full min-h-screen flex items-center py-20 px-6 md:px-16 ">
+<div class="w-full min-h-screen flex items-center py-20 px-6 md:px-16 " data-aos="fade-up" data-aos-delay="200">
 
     <div class="w-full">
 
@@ -22,7 +22,7 @@
             <div class="grid md:grid-cols-2 max-w-[70rem] gap-10">
 
                 <!-- RPL -->
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition">
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="200">
 
                     <!-- IMAGE -->
                     <div
@@ -67,7 +67,7 @@
 
                 <!-- TKJ -->
                 <div
-                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-yellow-300 hover:shadow-2xl transition">
+                    class="bg-white rounded-3xl shadow-lg overflow-hidden border border-yellow-300 hover:shadow-2xl transition" data-aos="fade-up">
 
                     <!-- IMAGE -->
                     <div

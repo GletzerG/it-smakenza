@@ -1,4 +1,32 @@
-<nav class="bg-gray-100 border-b border-gray-200 w-full">
+<style>
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #16a34a;
+    transition: width 0.3s ease;
+}
+
+.nav-link.active {
+    color: #16a34a;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+</style>
+
+<nav class="bg-white/30 backdrop-blur-md border-b w-full fixed top-0 left-0 z-50">
   <div class="w-full flex items-center justify-between py-3 px-4 md:px-6">
     
     <!-- LEFT -->
@@ -13,11 +41,11 @@
 
     <!-- CENTER MENU (DESKTOP) -->
     <div class="hidden md:flex items-center gap-10 text-gray-700 font-medium">
-      <a href="#" class="hover:text-green-600 transition">Beranda</a>
-      <a href="#" class="hover:text-green-600 transition">Jurusan</a>
-      <a href="#" class="hover:text-green-600 transition">Visi & Misi</a>
-      <a href="#" class="hover:text-green-600 transition">Galeri</a>
-      <a href="#" class="hover:text-green-600 transition">Testimoni</a>
+      <a href="#home" class="nav-link hover:text-green-600 transition">Beranda</a>
+      <a href="#programs" class="nav-link hover:text-green-600 transition">Program Keahlian</a>
+      <a href="#about" class="nav-link hover:text-green-600 transition">Tentang Kami</a>
+      <a href="#mission" class="nav-link hover:text-green-600 transition">Visi & Misi</a>
+      <a href="#gallery" class="nav-link hover:text-green-600 transition">Galeri</a>
     </div>
 
     <!-- RIGHT BUTTON (DESKTOP) -->
@@ -42,11 +70,11 @@
   <!-- MOBILE MENU -->
   <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
     <div class="flex flex-col gap-3 text-gray-700 font-medium">
-      <a href="#" class="hover:text-green-600">Beranda</a>
-      <a href="#" class="hover:text-green-600">Jurusan</a>
-      <a href="#" class="hover:text-green-600">Visi & Misi</a>
-      <a href="#" class="hover:text-green-600">Galeri</a>
-      <a href="#" class="hover:text-green-600">Testimoni</a>
+      <a href="#home" class="nav-link hover:text-green-600">Beranda</a>
+      <a href="#programs" class="nav-link hover:text-green-600">Jurusan</a>
+      <a href="#about" class="nav-link hover:text-green-600">Tentang Kami</a>
+      <a href="#gallery" class="nav-link hover:text-green-600">Galeri</a>
+      <a href="#testimonials" class="nav-link hover:text-green-600">Testimoni</a>
 
       <hr class="my-2">
 

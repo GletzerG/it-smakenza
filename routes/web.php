@@ -3,7 +3,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages.default.landing.index');
+    return view('pages.default.index');
 });
 
 Route::get('/dashboard', function () {

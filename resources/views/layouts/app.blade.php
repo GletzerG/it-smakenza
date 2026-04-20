@@ -14,29 +14,62 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- AOS LIB --}}
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="font-sans antialiased">
     <div class="min-h-screen">
-        <header>
+        <header class="mb-[3rem]">
             @include('layouts.header')
         </header>
-        <main class="">
-            <!-- BACKGROUND BALLS -->
-            <div class="absolute inset-0 -z-10 min-h-[200vh] overflow-hidden opacity-50">
-                <div class="ball ball-1"></div>
-                <div class="ball ball-2"></div>
-                <div class="ball ball-3"></div>
-                <div class="ball ball-4"></div>
-                <div class="ball ball-5"></div>
-                <div class="ball ball-6"></div>
-            </div>
+
+        <main>
+            @include('pages.default.partials.ball-background')
             @yield('main')
         </main>
+
         <footer class="bg-gray-900 text-gray-300 w-full">
             @include('layouts.footer')
         </footer>
+
     </div>
+
+    {{-- AOS LIB --}}
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+    </script>
+
+    {{-- NAV LINK ACTIVE STATE --}}
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
