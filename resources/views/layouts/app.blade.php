@@ -45,7 +45,6 @@
         });
     </script>
 
-    {{-- NAV LINK ACTIVE STATE --}}
     <script>
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
@@ -64,7 +63,9 @@
 
             navLinks.forEach(link => {
                 link.classList.remove("active");
-                if (link.getAttribute("href") === "#" + current) {
+                const href = link.getAttribute("href"); 
+                const newhref = href.replace("/", "");
+                if (newhref === "#" + current) {
                     link.classList.add("active");
                 }
             });
